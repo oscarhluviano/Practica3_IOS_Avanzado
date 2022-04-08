@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
     
@@ -16,7 +17,7 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.navigationController?.navigationBar.isHidden = true
+        getAllItems()
 //        obtenInfo()
 
         // Uncomment the following line to preserve selection between presentations
@@ -130,7 +131,6 @@ class TableViewController: UITableViewController {
     func getAllItems(){
         do{
             datos = try context.fetch(Drinks.fetchRequest())
-            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
