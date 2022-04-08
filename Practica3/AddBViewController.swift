@@ -25,12 +25,12 @@ class AddBViewController: UIViewController {
     
     @IBAction func addElement(_ sender: Any) {
         
-        if tvName.text != "" && tvIngredients.text != "" && tvIngredients.text != ""{
+        if tvName.text != "" && tvIngredients.text != "" && tvInstructions.text != ""{
             createDrink(name: tvName.text ?? "", ing: tvIngredients.text ?? "", instru: tvInstructions.text ?? "")
             tvName.text = ""
             tvIngredients.text = ""
             tvInstructions.text = ""
-            let alertController = UIAlertController(title: "Éxito}", message:
+            let alertController = UIAlertController(title: "Éxito", message:
                     "Se agregó elemento", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: .default))
                 self.present(alertController, animated: true, completion: nil)
