@@ -30,7 +30,10 @@ class AddBViewController: UIViewController {
             tvName.text = ""
             tvIngredients.text = ""
             tvInstructions.text = ""
-            print("Record Added!")
+            let alertController = UIAlertController(title: "Éxito}", message:
+                    "Se agregó elemento", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(alertController, animated: true, completion: nil)
         }else{
             let alertController = UIAlertController(title: "Error", message:
                     "Faltan datos", preferredStyle: .alert)
@@ -42,17 +45,17 @@ class AddBViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        getAllItems()
+        addElementsPlist()
         
         // Do any additional setup after loading the view.
     }
     
-    func createDrink(name: String, ing: String, instru: String){
+    func createDrink(name: String, ing: String, instru: String, img: String = "drink.png"){
         let newDrink = Drinks(context: context)
         newDrink.name = name
         newDrink.ingredients = ing
         newDrink.instructions = instru
-        newDrink.image = "drink.png"
+        newDrink.image = img
         do{
             try context.save()
         }catch{
@@ -60,12 +63,19 @@ class AddBViewController: UIViewController {
         }
     }
     
-    func getAllItems(){
+    func addElementsPlist(){
         do{
             datos = try context.fetch(Drinks.fetchRequest())
             if datos.count == 0 {
+                obtenPlt()
                 print("hola")
+                print(plst.count)
+                for i in 0..<(plst.count){
+                        let dato = plst[i]
+                    createDrink(name: (dato["name"] as? String) ?? "", ing: (dato["ingredients"] as? String) ?? "", instru: (dato["directions"] as? String) ?? "", img: (dato["image"] as? String) ?? "")
+                }
             }
+            print("exito")
         }catch{
             print("error")
         }
