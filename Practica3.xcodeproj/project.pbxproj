@@ -16,6 +16,7 @@
 		526251CA27F555FE00B24F3F /* Drinks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 526251C927F555FE00B24F3F /* Drinks.plist */; };
 		526251D027F5597600B24F3F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526251CF27F5597600B24F3F /* TableViewController.swift */; };
 		991201C82800B37D00713A90 /* AddBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991201C72800B37D00713A90 /* AddBViewController.swift */; };
+		9963362D28543036001AA3C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9963362C28543036001AA3C2 /* GoogleService-Info.plist */; };
 		99FB2FEC2800C17D00839C39 /* Practica3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99FB2FEA2800C17D00839C39 /* Practica3.xcdatamodeld */; };
 		99FB2FF42800CB0800839C39 /* Drinks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB2FF22800CB0800839C39 /* Drinks+CoreDataClass.swift */; };
 		99FB2FF52800CB0800839C39 /* Drinks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB2FF32800CB0800839C39 /* Drinks+CoreDataProperties.swift */; };
@@ -33,6 +34,7 @@
 		526251C927F555FE00B24F3F /* Drinks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Drinks.plist; path = "../../../../Downloads/Practica3_IOS-main/Drinks.plist"; sourceTree = SOURCE_ROOT; };
 		526251CF27F5597600B24F3F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		991201C72800B37D00713A90 /* AddBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBViewController.swift; sourceTree = "<group>"; };
+		9963362C28543036001AA3C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99FB2FEB2800C17D00839C39 /* Practica3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Practica3.xcdatamodel; sourceTree = "<group>"; };
 		99FB2FF22800CB0800839C39 /* Drinks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks+CoreDataClass.swift"; sourceTree = "<group>"; };
 		99FB2FF32800CB0800839C39 /* Drinks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				526251CF27F5597600B24F3F /* TableViewController.swift */,
 				991201C72800B37D00713A90 /* AddBViewController.swift */,
 				99FB2FEA2800C17D00839C39 /* Practica3.xcdatamodeld */,
+				9963362C28543036001AA3C2 /* GoogleService-Info.plist */,
 			);
 			path = Practica3;
 			sourceTree = "<group>";
@@ -137,6 +140,9 @@
 				Base,
 			);
 			mainGroup = 526251A927F554C500B24F3F;
+			packageReferences = (
+				9963362E28543C8B001AA3C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 526251B327F554C500B24F3F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -153,6 +159,7 @@
 			files = (
 				526251C227F554C700B24F3F /* LaunchScreen.storyboard in Resources */,
 				526251CA27F555FE00B24F3F /* Drinks.plist in Resources */,
+				9963362D28543036001AA3C2 /* GoogleService-Info.plist in Resources */,
 				526251BF27F554C700B24F3F /* Assets.xcassets in Resources */,
 				526251BD27F554C500B24F3F /* Main.storyboard in Resources */,
 			);
@@ -388,6 +395,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9963362E28543C8B001AA3C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		99FB2FEA2800C17D00839C39 /* Practica3.xcdatamodeld */ = {
