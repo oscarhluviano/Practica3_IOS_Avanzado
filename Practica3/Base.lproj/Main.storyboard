@@ -11,7 +11,7 @@
         <!--AddB View Controller-->
         <scene sceneID="W0d-EG-aMU">
             <objects>
-                <viewController id="stT-Ou-KrL" customClass="AddBViewController" customModule="Practica3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="stT-Ou-KrL" customClass="AddBViewController" customModule="Practica3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Mm-K1-qwr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cerrar sesión"/>
                                 <connections>
-                                    <segue destination="0cT-Te-z1C" kind="presentation" modalPresentationStyle="fullScreen" id="g7L-tp-VFu"/>
+                                    <action selector="btnLogout:" destination="stT-Ou-KrL" eventType="touchUpInside" id="sBg-ev-3Lp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,11 +117,12 @@
                         <outlet property="tvIngredients" destination="PRG-VD-zN1" id="B5v-xQ-ows"/>
                         <outlet property="tvInstructions" destination="Pfk-mQ-r8E" id="zlw-pp-gys"/>
                         <outlet property="tvName" destination="aEO-U9-AQG" id="9dB-Kt-TCu"/>
+                        <segue destination="0cT-Te-z1C" kind="presentation" identifier="goLogin" modalPresentationStyle="fullScreen" id="mcw-5U-vOl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K57-pe-4lL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1120" y="70"/>
+            <point key="canvasLocation" x="-1188" y="70"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Yre-bC-7ss">
@@ -198,10 +199,10 @@
             </objects>
             <point key="canvasLocation" x="392.75362318840581" y="69.642857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="VVn-cT-OSY">
             <objects>
-                <viewController id="0cT-Te-z1C" sceneMemberID="viewController">
+                <viewController id="0cT-Te-z1C" customClass="LoginViewController" customModule="Practica3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CPA-hU-api">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,7 +221,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSd-I6-Iag">
                                 <rect key="frame" x="16" y="279" width="382" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06Z-CT-84m">
                                 <rect key="frame" x="16" y="234" width="382" height="21"/>
@@ -233,7 +234,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="INICIAR SESION"/>
                                 <connections>
-                                    <segue destination="stT-Ou-KrL" kind="presentation" identifier="goHome" modalPresentationStyle="fullScreen" id="IbZ-I0-C00"/>
+                                    <action selector="btnLogIn:" destination="0cT-Te-z1C" eventType="touchUpInside" id="HQH-qB-OaW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inicio de sesión" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywz-Yr-1d4">
@@ -277,15 +278,20 @@
                             <constraint firstItem="xMR-jY-Sqc" firstAttribute="leading" secondItem="94c-n4-fgp" secondAttribute="leading" constant="16" id="ybG-6h-cik"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="zqH-7U-3Di" id="Hsd-N1-ySk"/>
+                        <outlet property="txtPswd" destination="tSd-I6-Iag" id="Uou-83-KLk"/>
+                        <segue destination="stT-Ou-KrL" kind="presentation" identifier="goHome" modalPresentationStyle="fullScreen" id="9dF-Gf-E5G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bld-fn-RNn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2004" y="70"/>
+            <point key="canvasLocation" x="-1996" y="70"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="jlt-jF-hvV">
             <objects>
-                <viewController id="dfz-pi-Bcf" sceneMemberID="viewController">
+                <viewController id="dfz-pi-Bcf" customClass="SignupViewController" customModule="Practica3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nSS-77-6uJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,7 +334,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="REGISTRARSE"/>
                                 <connections>
-                                    <segue destination="0cT-Te-z1C" kind="presentation" modalPresentationStyle="fullScreen" id="tf6-MN-2gk"/>
+                                    <action selector="Signup:" destination="dfz-pi-Bcf" eventType="touchUpInside" id="mRh-Wu-ZlH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWI-Zh-uyu">
@@ -378,14 +384,20 @@
                             <constraint firstItem="FQw-Om-Tqq" firstAttribute="trailing" secondItem="PEC-7l-FiN" secondAttribute="trailing" constant="16" id="zdD-aR-Mnv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="CvG-5G-O5d" id="NIg-p3-lvW"/>
+                        <outlet property="txtName" destination="YrG-Ia-M1I" id="unc-h9-L8p"/>
+                        <outlet property="txtPswd" destination="G91-CB-MAA" id="gxa-cQ-f2m"/>
+                        <segue destination="0cT-Te-z1C" kind="presentation" identifier="goLogin" modalPresentationStyle="fullScreen" id="NAl-rW-MoC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czE-eq-ykp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2743" y="693"/>
+            <point key="canvasLocation" x="-2771" y="704"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tf6-MN-2gk"/>
+        <segue reference="mcw-5U-vOl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

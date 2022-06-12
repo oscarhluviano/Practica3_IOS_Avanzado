@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
 
 class AddBViewController: UIViewController {
     
@@ -16,7 +17,30 @@ class AddBViewController: UIViewController {
     
     var plst = [[String:Any]]()
     
-
+    @IBAction func btnLogout(_ sender: Any) {
+        
+        // TODO: Confirmar si de verdad quiere cerrar sesion
+        let alert = UIAlertController(title: "", message: "Desea salir de la App?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "NO", style:.cancel, handler: nil))
+        let btnNo = UIAlertAction(title: "SI", style:.destructive) { action in
+            do {
+                try Auth.auth().signOut()
+                // Obtenemos una referencia al SceneDelegate:
+                // Podria haber mas de una escena en iPad OS o en Mac OS
+                let escena = UIApplication.shared.connectedScenes.first
+                let sd = escena?.delegate as! SceneDelegate
+                sd.cambiarVistaA("")
+                self.performSegue(withIdentifier: "goLogin", sender: nil)
+                print ("cerrar sesion")
+            }
+            catch {
+                print("Error")
+            }
+        }
+        alert.addAction(btnNo)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var tvName: UITextField!
     @IBOutlet weak var tvIngredients: UITextView!
     @IBOutlet weak var tvInstructions: UITextView!

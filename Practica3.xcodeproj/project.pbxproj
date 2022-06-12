@@ -16,6 +16,9 @@
 		526251CA27F555FE00B24F3F /* Drinks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 526251C927F555FE00B24F3F /* Drinks.plist */; };
 		526251D027F5597600B24F3F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526251CF27F5597600B24F3F /* TableViewController.swift */; };
 		991201C82800B37D00713A90 /* AddBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991201C72800B37D00713A90 /* AddBViewController.swift */; };
+		995938F2285581EE0084B99F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995938F1285581EE0084B99F /* LoginViewController.swift */; };
+		995938F5285588170084B99F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 995938F4285588170084B99F /* FirebaseAuth */; };
+		995938F7285592620084B99F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995938F6285592620084B99F /* SignupViewController.swift */; };
 		9963362D28543036001AA3C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9963362C28543036001AA3C2 /* GoogleService-Info.plist */; };
 		99FB2FEC2800C17D00839C39 /* Practica3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99FB2FEA2800C17D00839C39 /* Practica3.xcdatamodeld */; };
 		99FB2FF42800CB0800839C39 /* Drinks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB2FF22800CB0800839C39 /* Drinks+CoreDataClass.swift */; };
@@ -34,6 +37,8 @@
 		526251C927F555FE00B24F3F /* Drinks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Drinks.plist; path = "../../../../Downloads/Practica3_IOS-main/Drinks.plist"; sourceTree = SOURCE_ROOT; };
 		526251CF27F5597600B24F3F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		991201C72800B37D00713A90 /* AddBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBViewController.swift; sourceTree = "<group>"; };
+		995938F1285581EE0084B99F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		995938F6285592620084B99F /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		9963362C28543036001AA3C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99FB2FEB2800C17D00839C39 /* Practica3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Practica3.xcdatamodel; sourceTree = "<group>"; };
 		99FB2FF22800CB0800839C39 /* Drinks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				995938F5285588170084B99F /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +82,7 @@
 				526251B727F554C500B24F3F /* SceneDelegate.swift */,
 				526251B927F554C500B24F3F /* ViewController.swift */,
 				526251BB27F554C500B24F3F /* Main.storyboard */,
+				995938F1285581EE0084B99F /* LoginViewController.swift */,
 				526251BE27F554C700B24F3F /* Assets.xcassets */,
 				526251C027F554C700B24F3F /* LaunchScreen.storyboard */,
 				526251C327F554C700B24F3F /* Info.plist */,
@@ -83,6 +90,7 @@
 				991201C72800B37D00713A90 /* AddBViewController.swift */,
 				99FB2FEA2800C17D00839C39 /* Practica3.xcdatamodeld */,
 				9963362C28543036001AA3C2 /* GoogleService-Info.plist */,
+				995938F6285592620084B99F /* SignupViewController.swift */,
 			);
 			path = Practica3;
 			sourceTree = "<group>";
@@ -112,6 +120,9 @@
 			dependencies = (
 			);
 			name = Practica3;
+			packageProductDependencies = (
+				995938F4285588170084B99F /* FirebaseAuth */,
+			);
 			productName = Practica3;
 			productReference = 526251B227F554C500B24F3F /* Practica3.app */;
 			productType = "com.apple.product-type.application";
@@ -172,7 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				995938F2285581EE0084B99F /* LoginViewController.swift in Sources */,
 				99FB2FEC2800C17D00839C39 /* Practica3.xcdatamodeld in Sources */,
+				995938F7285592620084B99F /* SignupViewController.swift in Sources */,
 				99FB2FF52800CB0800839C39 /* Drinks+CoreDataProperties.swift in Sources */,
 				991201C82800B37D00713A90 /* AddBViewController.swift in Sources */,
 				526251BA27F554C500B24F3F /* ViewController.swift in Sources */,
@@ -406,6 +419,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		995938F4285588170084B99F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9963362E28543C8B001AA3C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		99FB2FEA2800C17D00839C39 /* Practica3.xcdatamodeld */ = {
