@@ -9,13 +9,15 @@ import UIKit
 import CoreData
 import FirebaseAuth
 
-class AddBViewController: UIViewController {
+class AddBViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var datos = [Drinks]()
     
     var plst = [[String:Any]]()
+    
+    var imagePicker = UIImagePickerController()
     
     @IBAction func btnLogout(_ sender: Any) {
         
@@ -41,10 +43,22 @@ class AddBViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    @IBAction func btnAddImg(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+                    print("Button capture")
+
+                    imagePicker.delegate = self
+                    imagePicker.sourceType = .savedPhotosAlbum
+                    imagePicker.allowsEditing = false
+
+                    present(imagePicker, animated: true, completion: nil)
+                }
+    }
+    
     @IBOutlet weak var tvName: UITextField!
     @IBOutlet weak var tvIngredients: UITextView!
     @IBOutlet weak var tvInstructions: UITextView!
-    
     
     
     @IBAction func addElement(_ sender: Any) {
